@@ -1,0 +1,237 @@
+/* Material Themes */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+
+@import '~@angular/material/theming';
+
+// always include only once per project
+@include mat-core();
+
+$md-primary: (
+    50 : #edeaf4,
+    100 : #d1cae5,
+    200 : #b3a7d3,
+    300 : #9583c1,
+    400 : #7e69b4,
+    500 : #674ea7,
+    600 : #5f479f,
+    700 : #543d96,
+    800 : #4a358c,
+    900 : #39257c,
+    A100 : #cbbdff,
+    A200 : #a28aff,
+    A400 : #7a57ff,
+    A700 : #663dff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-accent: (
+    50 : #e8f0f8,
+    100 : #c5daee,
+    200 : #9ec2e3,
+    300 : #77aad7,
+    400 : #5a97cf,
+    500 : #3d85c6,
+    600 : #377dc0,
+    700 : #2f72b9,
+    800 : #2768b1,
+    900 : #1a55a4,
+    A100 : #dae9ff,
+    A200 : #a7caff,
+    A400 : #74abff,
+    A700 : #5b9cff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-warn: (
+    50 : #fcf2e7,
+    100 : #f8dec3,
+    200 : #f3c89c,
+    300 : #eeb274,
+    400 : #eaa256,
+    500 : #e69138,
+    600 : #e38932,
+    700 : #df7e2b,
+    800 : #db7424,
+    900 : #d56217,
+    A100 : #ffffff,
+    A200 : #ffe3d4,
+    A400 : #ffc3a1,
+    A700 : #ffb287,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+// define 3 theme color
+// mat-palette accepts $palette-name, main, lighter and darker variants
+// mat-palette(palette-name, defaultValue, lighterValue, darkerValue);
+$main-theme-primary: mat-palette($md-primary);
+$main-theme-accent: mat-palette($md-accent, A200, A700);
+$main-theme-warn: mat-palette($md-warn);
+$main-theme: mat-light-theme($main-theme-primary, $main-theme-accent, $main-theme-warn);
+.main-theme {
+    @include mat-form-field-theme($main-theme); // Form-Field theme
+}
+
+
+
+$md-dark-primary: (
+    50 : #e4e3ea,
+    100 : #bcb8ca,
+    200 : #9089a6,
+    300 : #635982,
+    400 : #413668,
+    500 : #20124d,
+    600 : #1c1046,
+    700 : #180d3d,
+    800 : #130a34,
+    900 : #0b0525,
+    A100 : #7561ff,
+    A200 : #492eff,
+    A400 : #2000fa,
+    A700 : #1d00e1,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #ffffff,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-dark-accent: (
+    50 : #eae2e6,
+    100 : #c9b8c1,
+    200 : #a68898,
+    300 : #82586e,
+    400 : #67354f,
+    500 : #4c1130,
+    600 : #450f2b,
+    700 : #3c0c24,
+    800 : #330a1e,
+    900 : #240513,
+    A100 : #ff609c,
+    A200 : #ff2d7c,
+    A400 : #f9005e,
+    A700 : #e00054,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-dark-warn: (
+    50 : #ede0e0,
+    100 : #d1b3b3,
+    200 : #b38080,
+    300 : #944d4d,
+    400 : #7d2626,
+    500 : #660000,
+    600 : #5e0000,
+    700 : #530000,
+    800 : #490000,
+    900 : #380000,
+    A100 : #ff6e6e,
+    A200 : #ff3b3b,
+    A400 : #ff0808,
+    A700 : #ee0000,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+// Define an alternate dark theme.
+// $dark-primary: mat-palette($mat-blue-grey);
+// $dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+// $dark-warn:    mat-palette($mat-deep-orange);
+$dark-primary: mat-palette($md-dark-primary);
+// mat-palette(colorName, defaultValue, lighterValue, darkerValue);
+$dark-accent:  mat-palette($md-dark-accent, 300);
+$dark-warn:    mat-palette($md-dark-warn, A700);
+
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+.dark-theme {
+    @include angular-material-theme($dark-theme);
+}

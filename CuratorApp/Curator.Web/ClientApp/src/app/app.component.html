@@ -1,0 +1,31 @@
+<div class="{{themeCss}}" [class.is-mobile]="IsMobile">
+  <!-- Top Nav -->
+  <app-top-nav-menu [isMobile]="IsMobile"></app-top-nav-menu>
+  <!-- Side Nav -->
+  <mat-sidenav-container class="all-wrapper" [class.all-wrapper-mobile]="IsMobile">
+    <!-- Side Nav -->
+    <mat-sidenav #sideNav class="side-nav"
+                 [mode]="IsMobile ? 'over' : 'side'"
+                 [fixedInViewport]="IsMobile">
+      <mat-nav-list>
+        <a [routerLink]="['/']">
+          <mat-list-item> Home</mat-list-item>
+        </a>
+        <mat-divider></mat-divider>
+        <a [routerLink]="['/profile']">
+          <mat-list-item> Profile</mat-list-item>
+        </a>
+        <mat-divider></mat-divider>
+      </mat-nav-list>
+    </mat-sidenav>
+    <!-- Page Content -->
+    <mat-sidenav-content class="main-content-wrapper">
+      <main class="">
+        <router-outlet></router-outlet>
+      </main>
+      <footer>
+        Your sticky footer with a variable height.
+      </footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

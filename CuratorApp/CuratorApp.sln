@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curator.Api", "Curator.Api\Curator.Api.csproj", "{1CA55ADC-C290-4C4E-93DF-1DD93942F921}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curator.Web", "Curator.Web\Curator.Web.csproj", "{BE2BB60A-9E88-4046-B22D-47F8F308C58F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CA55ADC-C290-4C4E-93DF-1DD93942F921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA55ADC-C290-4C4E-93DF-1DD93942F921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CA55ADC-C290-4C4E-93DF-1DD93942F921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CA55ADC-C290-4C4E-93DF-1DD93942F921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE2BB60A-9E88-4046-B22D-47F8F308C58F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE2BB60A-9E88-4046-B22D-47F8F308C58F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE2BB60A-9E88-4046-B22D-47F8F308C58F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE2BB60A-9E88-4046-B22D-47F8F308C58F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

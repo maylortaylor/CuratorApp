@@ -1,0 +1,67 @@
+
+// $breakpoints: (
+// small: 530px,
+// phone: 640px,
+// tablet: 768px
+// desktop: 1024px) !default;
+// // The mdia mixin
+// @mixin media($args...) {
+//   $query: "";
+//   @each $arg in $args {
+//     $op: "";
+//     @if ( $query != "" ) {
+//       $op: " and ";
+//     }
+//     $query: $query + $op + translate-media-condition($arg);
+//   }
+//   @media #{$query}  { @content; }
+// }
+
+html, body {
+  height: 100%;
+}
+
+is-mobile .top-nav {
+  position: fixed;
+  z-index: 2;
+}
+
+mat-nav-list {
+  min-width: 400px;
+}
+
+.all-wrapper {
+  margin-top: 0px;
+  min-height: 100vh;
+  flex: 1;
+}
+
+.all-wrapper-mobile {
+  margin-top: 74px;
+  min-height: 100vh;
+  flex: 1;
+}
+
+.main-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  flex: 1;
+}
+
+/*
+ * Make the Component injected by Router Outlet full height:
+ */
+main {
+  display: flex;
+  flex-direction: column;
+
+  > *:not(router-outlet) {
+    flex: 1;
+    display: block;
+  }
+}

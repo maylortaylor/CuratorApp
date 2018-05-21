@@ -1,0 +1,26 @@
+<!-- <div *ngIf="!(authService.user | async)"> -->
+<div >
+  <!-- <input type="text" [(ngModel)]="email" placeholder="email">
+  <input type="password" [(ngModel)]="password" placeholder="password"> -->
+
+  <button mat-button (click)="signup()" [disabled]="!email || !password">
+    Signup
+  </button>
+
+  <button mat-button (click)="login()" [disabled]="!email || !password">
+    Login
+  </button>
+
+  <button mat-button (click)="signInWithGoogle()">
+    Google
+  </button>
+
+  <button mat-button (click)="signInAnonymously()">
+    Anonymous
+  </button>
+</div>
+
+  <!-- <button (click)="logout()" *ngIf="authService.user | async"> -->
+    <button mat-button (click)="logout()" *ngIf="authService.isAuthenticated()">
+    Logout
+  </button>

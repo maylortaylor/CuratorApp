@@ -1,0 +1,56 @@
+<mat-toolbar color="primary" class="top-nav row">
+
+    <div class="col">
+        <button mat-icon-button (click)="toggleSideNav()"><mat-icon>menu</mat-icon></button>
+        <!-- <a [routerLink]="['/']" mat-raised-button class="mat-primary mat-button"> Home</a> -->
+    </div>
+
+    <div class="col">
+        <mat-form-field class="search-bar" [color]="primary">
+            <input #searchBar matInput placeholder="Search">
+        </mat-form-field>
+        <a (click)="search(searchBar.value)" mat-raised-button class="mat-primary">
+            <i class="fas fa-search"></i>
+        </a>
+    </div>
+
+    <div *ngIf="!isMobile" class="col" role="group" aria-label="Account">
+        <div class="btn-group float-right">
+            <button *ngIf="!isDarkTheme" (click)="switchTheme()" type="button" class="btn btn-secondary"><i class="fas fa-lightbulb"></i></button>
+            <button *ngIf="isDarkTheme" (click)="switchTheme()" type="button" class="btn btn-secondary"><i class="far fa-lightbulb"></i></button>
+
+            <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                <button class="btn dropdown-toggle-split" ngbDropdownToggle>
+                    <!-- Account -->
+                    <mat-icon>account_circle</mat-icon>
+                </button>
+                <div class="dropdown-menu" ngbDropdownMenu>
+
+                    <button *ngIf="!(authService.user | async)" (click)="signIn()" class="dropdown-item" color="accent"><i class="fas fa-sign-in-alt"></i></button>
+                    <button *ngIf="(authService.user | async)" (click)="signOut()" class="dropdown-item" color="accent"><i class="fas fa-sign-out-alt"></i></button>
+                    <!-- <a *ngIf="!(authService.user | async)" (click)="signIn()" class="dropdown-item" mat-raised-button color="accent"><i class="fas fa-sign-in-alt"></i></a>
+                    <a *ngIf="(authService.user | async)" (click)="signOut()" class="dropdown-item" mat-raised-button color="accent"><i class="fas fa-sign-out-alt"></i></a> -->
+                    <!-- <button class="dropdown-item">One</button>
+                    <button class="dropdown-item">Two</button>
+                    <button class="dropdown-item">Four!</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <<div class="btn-group col" role="group" aria-label="Button group with nested dropdown">
+        <button *ngIf="!isDarkTheme" (click)="switchTheme()" type="button" class="btn btn-secondary"><i class="fas fa-lightbulb"></i></button>
+        <button *ngIf="isDarkTheme" (click)="switchTheme()" type="button" class="btn btn-secondary"><i class="far fa-lightbulb"></i></button>
+
+        <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a *ngIf="!(authService.user | async)" (click)="signIn()" class="dropdown-item" mat-raised-button color="accent"><i class="fas fa-sign-in-alt"></i></a>
+                <a *ngIf="(authService.user | async)" (click)="signOut()" class="dropdown-item" mat-raised-button color="accent"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </div>
+    </div> -->
+</mat-toolbar>
