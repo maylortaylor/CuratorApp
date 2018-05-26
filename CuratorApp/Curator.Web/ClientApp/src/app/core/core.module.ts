@@ -8,7 +8,8 @@ import {
   ConsoleLoggerService,
   MatchMediaService,
   SidebarService,
-  UserService
+  UserService,
+  SnackBarService
 } from './services';
 
 @NgModule({
@@ -19,6 +20,7 @@ import {
     { provide: LoggerService, useClass: ConsoleLoggerService },
     MatchMediaService,
     SidebarService,
+    SnackBarService,
     UserService
   ]
 })

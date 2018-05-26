@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
@@ -18,10 +19,26 @@ namespace Curator.Api
         /// <param name="args">The command-line arguments.</param>
         public static void Main(string[] args)
         {
-            //BuildWebHost(args).Run();
+            IWebHostBuilder hostBuilder;
+            string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            // string slot = Environment.GetEnvironmentVariable("ASPNETCORE_SLOT_NAME");
 
-			var host = new WebHostBuilder()
-                .UseKestrel()
+            bool isDevelpmentEnvironment = !String.IsNullOrEmpty(env) && env == "Development";
+            if (/*isLocalSlot && */isDevelpmentEnvironment)
+            {
+                hostBuilder = new WebHostBuilder()
+                    .UseKestrel(options =>
+                            options.Listen(IPAddress.Loopback, 5001)
+                    )
+                    .UseUrls("https://api.local.dev:5001");
+            }
+            else
+            {
+                hostBuilder = new WebHostBuilder()
+                    .UseKestrel();
+            }
+
+            var host = hostBuilder
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
@@ -29,15 +46,5 @@ namespace Curator.Api
 
             host.Run();
         }
-
-        /// <summary>
-        /// Builds the web host.
-        /// </summary>
-        /// <returns>The web host.</returns>
-        /// <param name="args">Arguments.</param>
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
     }
 }

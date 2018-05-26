@@ -8,12 +8,14 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+// import { HomeComponent } from './home/home.component';
+import { HomeModule } from './home/home.module';
 import { ProfileComponent } from './profile/profile.component';
 import {
   LoginDialog
 } from './layout';
 import { LayoutModule } from './layout/layout.module'
+import { LayoutComponentsModule } from './layoutComponents/layoutComponents.module';
 // import {
 //   BsDropdownModule,
 //   TooltipModule,
@@ -35,7 +37,7 @@ import { AuthGuard } from './core/auth/auth-guard.service';
   declarations: [
     // 1) Top Level Components
     AppComponent,
-    HomeComponent,
+    // HomeComponent,
     ProfileComponent,
 
     // 2) Modals
@@ -59,11 +61,14 @@ import { AuthGuard } from './core/auth/auth-guard.service';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
 
-    // 4) Other Modules
-    BrowserAnimationsModule,
+    // 4) Important Modules
+    CoreModule,
     HttpClientModule,
     LayoutModule,
-    CoreModule
+    LayoutComponentsModule,
+    HomeModule,
+    // 5) Other Modules
+    BrowserAnimationsModule
   ],
   providers: [
     AuthGuard,

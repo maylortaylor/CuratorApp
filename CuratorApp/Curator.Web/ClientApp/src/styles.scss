@@ -6,6 +6,9 @@
 // import custom theme
 @import './themes.scss';
 
+body {
+  background-color: #303030;
+}
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;

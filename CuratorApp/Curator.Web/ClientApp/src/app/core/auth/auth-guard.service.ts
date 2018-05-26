@@ -1,7 +1,7 @@
 import "rxjs/add/operator/first";
 import "rxjs/add/operator/map";
 
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 
 import { Injectable } from "@angular/core";
 import {

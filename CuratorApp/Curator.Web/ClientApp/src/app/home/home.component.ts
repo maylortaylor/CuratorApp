@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../core/services/api.service'
-
+import { HomeDataService } from './services/homeData.service';
+import { LoggerService } from '../core/services/logger.service';
 
 @Component({
   selector: 'app-home',
@@ -15,22 +15,18 @@ export class HomeComponent {
 ]
 
   constructor(
-    private api: ApiService
+    private _homeData: HomeDataService,
+    private _logger: LoggerService
   ) {
 
   }
 
   ngOnInit() {
-    this.api.get('values')
-    .subscribe(
-      res => {
-        console.log(res);
-        
-        // debugger
-      },
-      err => {
-        debugger;
-      }
-  );
+    this._homeData.getHomeData()
+    .subscribe(res => {
+      this._logger.info(res);
+    }, err => {
+      this._logger.error(err);
+    })
   }
 }

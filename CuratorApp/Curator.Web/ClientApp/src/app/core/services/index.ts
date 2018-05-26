@@ -5,4 +5,5 @@ export * from './logger.service';
 export * from './console-logger.service';
 export * from './match.media.service';
 export * from './sidebar.service';
+export * from './snackBar.service';
 export * from './user.service';

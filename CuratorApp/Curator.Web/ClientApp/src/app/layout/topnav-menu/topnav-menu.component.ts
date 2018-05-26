@@ -4,6 +4,7 @@ import { FormControl } from '@angular/forms';
 import { SidebarService } from '../../core/services/sidebar.service';
 import { ThemeService } from '../topnav-menu/services/theme.service';
 import { AuthService } from '../../core/auth/auth.service';
+import { SnackBarService } from '../../core/services/snackBar.service';
 
 @Component({
   selector: 'app-top-nav-menu',
@@ -24,7 +25,8 @@ export class TopNavMenuComponent implements OnInit {
         private _theme: ThemeService,
         private cd: ChangeDetectorRef,
         public dialog: MatDialog,
-        public authService: AuthService
+        public authService: AuthService,
+        private _snackBar: SnackBarService
     ) {
     }
 
@@ -38,7 +40,8 @@ export class TopNavMenuComponent implements OnInit {
     switchTheme() {
         this._theme.changeTheme();
         this.isDarkTheme = !this.isDarkTheme;
-        console.log("Dark Theme?", this.isDarkTheme);
+        var message = !!this.isDarkTheme ? "Dark Theme" : "Light Theme";
+        this._snackBar.message(message);
     }
     toggleSideNav() {
         this._sideBarService.sideNav.toggle();

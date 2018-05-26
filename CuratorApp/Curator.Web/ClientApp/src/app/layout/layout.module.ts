@@ -4,7 +4,6 @@ import { MaterialModule } from './material/material.module';
 import { ThemeService } from './topnav-menu/services/theme.service';
 
 import {
-  BannerComponent,
   FooterComponent,
   TopNavMenuComponent
 } from '../layout';
@@ -15,13 +14,11 @@ import {
     MaterialModule
   ],
   declarations: [
-    BannerComponent,
     FooterComponent,
     TopNavMenuComponent
   ],
   exports: [
     MaterialModule,
-    BannerComponent,
     FooterComponent,
     TopNavMenuComponent
   ],

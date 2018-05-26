@@ -35,7 +35,7 @@ namespace Curator.Api
 
 			services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { 
+                c.SwaggerDoc("v1", new Info {
 					Version = "v1",
                     Title = "Curator.Api",
 					Description = "A Music Curating API service",
@@ -58,7 +58,6 @@ namespace Curator.Api
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
-   
         }
 
 
