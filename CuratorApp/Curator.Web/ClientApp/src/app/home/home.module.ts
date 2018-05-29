@@ -9,7 +9,9 @@ import { LayoutComponentsModule } from '../layoutComponents/layoutComponents.mod
         CommonModule,
         LayoutComponentsModule
     ],
-    exports: [],
+    exports: [
+
+    ],
     declarations: [
         HomeComponent
     ],

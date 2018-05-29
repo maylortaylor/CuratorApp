@@ -2,25 +2,17 @@ import { environment } from '../environments/environment';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-// import { HomeComponent } from './home/home.component';
 import { HomeModule } from './home/home.module';
 import { ProfileComponent } from './profile/profile.component';
-import {
-  LoginDialog
-} from './layout';
+import { LoginDialog } from './layout';
 import { LayoutModule } from './layout/layout.module'
 import { LayoutComponentsModule } from './layoutComponents/layoutComponents.module';
-// import {
-//   BsDropdownModule,
-//   TooltipModule,
-//   ModalModule
-// } from 'ngx-bootstrap';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -43,6 +35,7 @@ import { AuthGuard } from './core/auth/auth-guard.service';
     // 2) Modals
     LoginDialog,
 
+
     // 3) Filters
   ],
   entryComponents: [
@@ -52,7 +45,6 @@ import { AuthGuard } from './core/auth/auth-guard.service';
   imports: [
     // 1) Bootstrap
     NgbModule.forRoot(),
-
     // 2) Routing
     AppRoutingModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -62,10 +54,12 @@ import { AuthGuard } from './core/auth/auth-guard.service';
     AngularFireAuthModule,
 
     // 4) Important Modules
+    // FormsModule,
+    // ReactiveFormsModule,
     CoreModule,
     HttpClientModule,
     LayoutModule,
-    LayoutComponentsModule,
+    // LayoutComponentsModule,
     HomeModule,
     // 5) Other Modules
     BrowserAnimationsModule

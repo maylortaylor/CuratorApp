@@ -62,12 +62,6 @@ export class AppComponent {
               that.ShowDesktop();
           }
       );
-
-
-          // Correct source file name and line number :)
-    _logger.info('AppComponent: logger.info()');
-    _logger.warn('AppComponent: logger.warn()');
-    _logger.error('AppComponent: logger.error()');
   }
 
   ngOnInit() {

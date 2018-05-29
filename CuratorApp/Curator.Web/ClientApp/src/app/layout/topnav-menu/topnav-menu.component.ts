@@ -1,10 +1,12 @@
 import { Inject, Input, ChangeDetectorRef, Component, OnInit, HostBinding, ViewChild, ElementRef } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } 
+    from '@angular/forms';
 import { SidebarService } from '../../core/services/sidebar.service';
 import { ThemeService } from '../topnav-menu/services/theme.service';
 import { AuthService } from '../../core/auth/auth.service';
 import { SnackBarService } from '../../core/services/snackBar.service';
+import { LoggerService } from '../../core/services/logger.service';
 
 @Component({
   selector: 'app-top-nav-menu',
@@ -13,6 +15,8 @@ import { SnackBarService } from '../../core/services/snackBar.service';
 })
 
 export class TopNavMenuComponent implements OnInit {
+    searchForm: FormGroup;
+    searchText = new FormControl("", Validators.required);
     @Input() isMobile: boolean;
     sideNavIsOpen = false;
     isDarkTheme: boolean = false;
@@ -24,18 +28,25 @@ export class TopNavMenuComponent implements OnInit {
         private _sideBarService: SidebarService,
         private _theme: ThemeService,
         private cd: ChangeDetectorRef,
+        private _logger: LoggerService,
         public dialog: MatDialog,
         public authService: AuthService,
-        private _snackBar: SnackBarService
+        private _snackBar: SnackBarService,
+        private fb: FormBuilder
     ) {
+        this.searchForm = fb.group({
+            "searchText": this.searchText,
+        });
     }
-
+    searchPage() {
+        this._logger.debugLabel("SEARCH TEXT: ", this.searchText);
+    }
     ngOnInit() {
     }
     ngAfterViewInit() {
     }
     search(searchValue) {
-        console.log(searchValue);
+        this._snackBar.message(searchValue)
     }
     switchTheme() {
         this._theme.changeTheme();
@@ -56,7 +67,7 @@ export class TopNavMenuComponent implements OnInit {
               });
 
               dialogRef.afterClosed().subscribe(result => {
-                console.log('The dialog was closed');
+                this._logger.info('The dialog was closed')
                 //  debugger;
               });
         }

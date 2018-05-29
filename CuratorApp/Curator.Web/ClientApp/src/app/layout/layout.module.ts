@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from './material/material.module';
 import { ThemeService } from './topnav-menu/services/theme.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
   FooterComponent,
@@ -11,7 +13,10 @@ import {
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    NgbModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   declarations: [
     FooterComponent,
