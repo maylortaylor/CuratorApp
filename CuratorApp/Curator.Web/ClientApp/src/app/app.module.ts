@@ -9,7 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileModule } from './profile/profile.module';
 import { LoginDialog } from './layout';
 import { LayoutModule } from './layout/layout.module'
 import { LayoutComponentsModule } from './layoutComponents/layoutComponents.module';
@@ -30,7 +30,7 @@ import { AuthGuard } from './core/auth/auth-guard.service';
     // 1) Top Level Components
     AppComponent,
     // HomeComponent,
-    ProfileComponent,
+    // ProfileModule,
 
     // 2) Modals
     LoginDialog,
@@ -61,6 +61,7 @@ import { AuthGuard } from './core/auth/auth-guard.service';
     LayoutModule,
     // LayoutComponentsModule,
     HomeModule,
+    ProfileModule,
     // 5) Other Modules
     BrowserAnimationsModule
   ],

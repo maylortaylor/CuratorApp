@@ -48,8 +48,7 @@ mat-nav-list {
   min-height: 100vh;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding: 16px 20px 16px 20px;
   flex: 1;
 }
 
@@ -65,3 +64,7 @@ main {
     display: block;
   }
 }
+
+// .card-header {
+//   border-bottom:solid gray 10px !important;
+// }

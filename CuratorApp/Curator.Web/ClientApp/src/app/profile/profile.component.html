@@ -1,4 +1,25 @@
-PROFILE
-<div class="block-red">
-asdfasdfasdfasd
-</div>
+
+<!-- <app-banner title="{{title}}" description="{{description}}"></app-banner> -->
+<section class="container">
+    <mat-card class="card profile-card col-lg-2">
+        <mat-card-header class="card-header">
+            <img mat-card-avatar class="user-avatar">
+            <mat-card-title class="card-title">{{person.getFullName()}}</mat-card-title>
+            <mat-card-subtitle class="card-subtitle">{{person.email}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="card-body">
+            <mat-tab-group>
+                <mat-tab label="Tab 1">
+                    <mat-radio-group class="row">
+                        <mat-radio-button class="col" value="1">Option 1</mat-radio-button>
+                        <mat-radio-button class="col" value="1">Option 2</mat-radio-button>
+                        <div class="w-100"></div>
+                        <mat-radio-button class="col" value="2">Option 3</mat-radio-button>
+                        <mat-radio-button class="col" value="2">Option 4</mat-radio-button>
+                    </mat-radio-group>
+                </mat-tab>
+                <mat-tab label="Tab 2">Content 2</mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+    </mat-card>
+</section>

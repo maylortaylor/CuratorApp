@@ -4,13 +4,13 @@ import { Observable ,  BehaviorSubject ,  ReplaySubject } from 'rxjs';
 
 import { ApiService } from './api.service';
 import { JwtService } from './jwt.service';
-import { User } from '../models';
+import { UserModel } from '../models';
 import { map ,  distinctUntilChanged } from 'rxjs/operators';
 
 
 @Injectable()
 export class UserService {
-  private currentUserSubject = new BehaviorSubject<User>({} as User);
+  private currentUserSubject = new BehaviorSubject<UserModel>({} as UserModel);
   public currentUser = this.currentUserSubject.asObservable().pipe(distinctUntilChanged());
 
   private isAuthenticatedSubject = new ReplaySubject<boolean>(1);
@@ -38,7 +38,7 @@ export class UserService {
     }
   }
 
-  setAuth(user: User) {
+  setAuth(user: UserModel) {
     // Save JWT sent from server in localstorage
     this.jwtService.saveToken(user.token);
     // Set current user data into observable
@@ -51,12 +51,12 @@ export class UserService {
     // Remove JWT from localstorage
     this.jwtService.destroyToken();
     // Set current user to an empty object
-    this.currentUserSubject.next({} as User);
+    this.currentUserSubject.next({} as UserModel);
     // Set auth status to false
     this.isAuthenticatedSubject.next(false);
   }
 
-  attemptAuth(type, credentials): Observable<User> {
+  attemptAuth(type, credentials): Observable<UserModel> {
     const route = (type === 'login') ? '/login' : '';
     return this.apiService.post('/users' + route, {user: credentials})
       .pipe(map(
@@ -67,12 +67,12 @@ export class UserService {
     ));
   }
 
-  getCurrentUser(): User {
+  getCurrentUser(): UserModel {
     return this.currentUserSubject.value;
   }
 
   // Update the user on the server (email, pass, etc)
-  update(user): Observable<User> {
+  update(user): Observable<UserModel> {
     return this.apiService
     .put('/user', { user })
     .pipe(map(data => {

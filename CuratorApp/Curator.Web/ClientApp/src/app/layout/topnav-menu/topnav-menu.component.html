@@ -16,8 +16,8 @@
 
     <div *ngIf="!isMobile" class="col" role="group" aria-label="Account">
         <div class="btn-group float-right">
-            <button *ngIf="!isDarkTheme" (click)="switchTheme()" type="button" class="btn btn-secondary"><i class="fas fa-lightbulb"></i></button>
-            <button *ngIf="isDarkTheme" (click)="switchTheme()" type="button" class="btn btn-secondary"><i class="far fa-lightbulb"></i></button>
+            <button *ngIf="!isDarkTheme" (click)="switchTheme()" type="button" class="btn btn-secondary"><mat-icon>toggle_on</mat-icon></button>
+            <button *ngIf="isDarkTheme" (click)="switchTheme()" type="button" class="btn btn-secondary"><mat-icon>toggle_off</mat-icon></button>
 
             <div class="btn-group" ngbDropdown placement="bottom-left" role="group" aria-label="Button group with nested dropdown">
                 <button class="account-button btn dropdown-toggle-split" ngbDropdownToggle>

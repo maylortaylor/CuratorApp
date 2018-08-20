@@ -1,0 +1,38 @@
+2018-06-10 16:59:28.569 -04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2018-06-10 16:59:28.706 -04:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-06-10 16:59:28.715 -04:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-06-10 16:59:28.717 -04:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-06-10 16:59:28.717 -04:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-06-10 16:59:28.718 -04:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-06-10 17:04:42.766 -04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2018-06-10 17:04:42.878 -04:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-06-10 17:04:42.885 -04:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-06-10 17:04:42.886 -04:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-06-10 17:04:42.886 -04:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-06-10 17:04:42.887 -04:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-06-10 17:06:42.006 -04:00 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2018-06-10 17:06:42.272 -04:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-06-10 17:06:42.299 -04:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-06-10 17:06:42.300 -04:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-06-10 17:06:42.301 -04:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-06-10 17:06:42.303 -04:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-06-10 17:14:59.747 -04:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-06-10 17:14:59.812 -04:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-06-10 17:14:59.813 -04:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-06-10 17:14:59.813 -04:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-06-10 17:14:59.814 -04:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-06-10 17:17:50.969 -04:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-06-10 17:17:51.104 -04:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-06-10 17:17:51.105 -04:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-06-10 17:17:51.106 -04:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-06-10 17:17:51.107 -04:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-06-10 17:18:45.924 -04:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-06-10 17:18:45.998 -04:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-06-10 17:18:45.999 -04:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-06-10 17:18:45.999 -04:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-06-10 17:18:46.000 -04:00 [DBG] Using Identity.Application as default scheme for forbid
+2018-06-10 17:19:32.194 -04:00 [DBG] Using Identity.Application as default scheme for authentication
+2018-06-10 17:19:32.315 -04:00 [DBG] Using Identity.External as default scheme for sign-in
+2018-06-10 17:19:32.315 -04:00 [DBG] Using Identity.External as default scheme for sign-out
+2018-06-10 17:19:32.316 -04:00 [DBG] Using Identity.Application as default scheme for challenge
+2018-06-10 17:19:32.317 -04:00 [DBG] Using Identity.Application as default scheme for forbid

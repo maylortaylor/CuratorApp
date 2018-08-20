@@ -55,6 +55,13 @@ If you havent set your Environment Varibles, go here to find out: [Setting Envir
 
 More help with [Environment Varibales.](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-2.0)
 
+## Front-end Stack
+* [Bootstrap 4](https://getbootstrap.com/docs/4.0/components/card/)
+* [Angular 6+](https://angular.io/guide/displaying-data)
+* [Material Design Components](https://material.angular.io/components/categories)
+* [Material Icons](https://material.io/tools/icons/?style=baseline)
+
+
 Navigate to `CuratorApp/Curator.Web` to get started.
 
 * Run `dotnet build` to builds the project and all of its dependencies.

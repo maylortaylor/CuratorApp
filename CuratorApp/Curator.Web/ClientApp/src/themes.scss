@@ -117,7 +117,8 @@ $main-theme-accent: mat-palette($md-accent, A200, A700);
 $main-theme-warn: mat-palette($md-warn);
 $main-theme: mat-light-theme($main-theme-primary, $main-theme-accent, $main-theme-warn);
 .main-theme {
-    @include mat-form-field-theme($main-theme); // Form-Field theme
+    // @include mat-form-field-theme($main-theme); // Form-Field theme
+    @include angular-material-theme($main-theme);
 }
 
 
