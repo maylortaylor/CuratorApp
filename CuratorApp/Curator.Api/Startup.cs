@@ -44,7 +44,7 @@ namespace Curator.Api
                     {
                         Name = "Maylor Taylor",
                         Email = string.Empty,
-                        Url = "https://twitter.com/maylordev"
+                        Url = "https://maylortaylor.github.io"
                     },
                     //License = new License
                     //{

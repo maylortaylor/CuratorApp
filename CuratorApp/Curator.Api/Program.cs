@@ -21,6 +21,12 @@ namespace Curator.Api
         {
             IWebHostBuilder hostBuilder;
             string env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            
+            var config = new ConfigurationBuilder()
+                .AddCommandLine(args)
+                .AddJsonFile("hosting.json", optional: true)
+                .Build();
+                
             // string slot = Environment.GetEnvironmentVariable("ASPNETCORE_SLOT_NAME");
 
             bool isDevelpmentEnvironment = !String.IsNullOrEmpty(env) && env == "Development";
@@ -39,6 +45,7 @@ namespace Curator.Api
             }
 
             var host = hostBuilder
+                .UseConfiguration(config)
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
